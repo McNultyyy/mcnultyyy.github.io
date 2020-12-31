@@ -37,6 +37,7 @@ jobs:
             godaddy = "$HOME/.terraform/plugins/terraform-godaddy"
         }
         EOF
+        ls -la
 
     - name: Terraform fmt
       id: fmt
