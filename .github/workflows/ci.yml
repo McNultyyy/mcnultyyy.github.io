@@ -30,7 +30,12 @@ jobs:
       with:
         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
-    - run: bash <(curl -s https://raw.githubusercontent.com/n3integration/terraform-godaddy/master/install.sh)
+    - run: |
+        bash <(curl -s https://raw.githubusercontent.com/n3integration/terraform-godaddy/master/install.sh)
+        cat > ~/.terraformrc <<EOF
+          providers {
+            godaddy = "$HOME/.terraform/plugins/terraform-godaddy"
+        }
 
     - name: Terraform fmt
       id: fmt
