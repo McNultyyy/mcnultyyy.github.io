@@ -36,6 +36,7 @@ jobs:
           providers {
             godaddy = "$HOME/.terraform/plugins/terraform-godaddy"
         }
+        EOF
 
     - name: Terraform fmt
       id: fmt
