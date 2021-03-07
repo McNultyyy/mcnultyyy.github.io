@@ -25,6 +25,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      
+    - uses: fregante/setup-git-user@v1 # sets the user.name and user.email gitconfig
 
     - uses: hashicorp/setup-terraform@v1
       with:
